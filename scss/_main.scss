@@ -1,0 +1,527 @@
+// Navigation Variables
+$content-width: 1000px;
+$breakpoint: 799px;
+$nav-height: 70px;
+$nav-background: #fff;
+$nav-font-color: #333;
+$link-hover-color: #e5e5e5;
+// Outer navigation wrapper
+.navigation {
+  height: $nav-height;
+  background: $nav-background;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  z-index:1;
+  position:fixed;
+  left: 0;
+  top: 0;
+  width:100%;
+}
+// Logo and branding
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: $nav-height;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  a,
+  a:visited {
+    color: $nav-font-color;
+    text-decoration: none;
+  }
+}
+
+// Container with no padding for navbar
+.nav-container {
+  margin: 0 auto;
+  img {
+    height:60px;
+  }
+}
+
+// Navigation 
+nav {
+  font-family: 'PT Sans Narrow', sans-serif;
+  float: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+        font-size:2rem;
+        transition: 0.3s;
+        color:#444;
+        &:hover {
+          font-weight:bold;
+          text-decoration: none;
+        }
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: ' ▾';
+        }
+      } // Dropdown list
+      ul li {
+        min-width: 190px;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+
+// Dropdown list binds to JS toggle event
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+
+// Binds to JS Toggle
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $nav-background;
+  height: $nav-height;
+  width: $nav-height;
+}
+
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 3px;
+    width: 30px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+.slide {
+  img {
+    height:50vh;
+  }
+}
+//--Footer--/
+.footer {
+  line-height:4.5rem;
+  width: 100%;
+  background: #eee;
+  text-align: center;
+  padding: 2.3rem 2rem  1.5rem 2rem;
+  margin: 0;
+  margin-left: 0rem !important;
+  margin-right: 0;
+  display: flex;
+  p {
+    color: #333;
+  }
+  .span-1 {
+    text-align: left;
+    margin: 0 auto;
+    vertical-align:middle;
+  }
+  .span-2 {
+    .material-icons {
+      transform: translateY(32%);
+    }
+    .heart {
+      font-size: 18px;
+      color: #FF4D4D;
+      margin-top: 0px;
+      transform: translateY(24%);
+      margin: 0 auto;
+    }
+  }
+  .span-3 {
+    padding:0;
+    text-align: right;
+    margin: 0 auto;
+    a {
+      color: #333;
+      padding-right: 8px;
+      padding-left: 4px;
+      border-right: 1px solid #333;
+    }
+    .link-team {
+      border-right: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+.main {
+  .slider {
+    margin-top:70px;
+    .mySlides {display: none}
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+      .modal {
+        background-color: #0009;
+        .modal-dialog {
+          width:700px;
+          .modal-content {
+            position:relative;
+            top:50%;
+            transform: translateY(20%);
+            border:none;
+            box-shadow:none;
+            background-color: transparent;
+            .modal-header {
+              border:none;
+              width:700px;
+              height:393.75px;
+              button {
+                color:#fff;
+                opacity:1;
+                font-size:4rem;
+                border:1px solid #fff;
+                border-radius:50%;
+                padding:0.3rem 1rem;
+
+              }
+              iframe {
+                width:100%;
+                height:100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 2rem;
+      padding: 8px 12px;
+      position: absolute;
+      bottom: 40%;
+      width: 100%;
+      text-align: center;
+      .intro {
+        font-weight:bold;
+        font-size:2.7rem;
+      }
+      hr {
+        border:2.7px solid #fff;
+        width:50px;
+      }
+      button {
+        margin:0.5rem;
+        border:2px solid rgba(255,255,255,1);
+        border-radius:3px;
+        background-color: transparent;
+        transition: opacity 0.4s ease-in-out, border 0.4s ease-in-out, background-color 0.4s ease-in-out;
+        padding:1rem 1.5rem;
+      }
+      button:hover {
+        background-color:rgba(255,255,255, 0.2);
+        border-color:transparent;
+      } 
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
+  }
+  .aiaa{
+    margin-top:100px;
+    .title {
+      text-align:center;
+      color:#333;
+      font-family: Ubuntu;
+    }
+    .subtitle {
+      text-align:left;
+      color:#292929;
+      font-size:2.5rem;
+      font-family: Ubuntu;
+    }
+    .content {
+      color:#666;
+      padding:1rem;
+      font-size:1.5rem;
+      .img-wrapper {
+        display:flex;
+        justify-content: space-between;
+        img {
+          height:300px;
+        }
+      }
+    }
+    hr.colored {
+      border: 0;
+      /* in order to override TWBS stylesheet */
+      height: 3px;
+      margin-top: 0.5rem;
+      width: 200px;
+      background: linear-gradient(to right, #006400 0%, #006400 12.5%, rgba(196, 222, 138, 1) 12.5%, rgba(196, 222, 138, 1) 25%, rgba(255, 208, 132, 1) 25%, rgba(255, 208, 132, 1) 37.5%, rgba(242, 122, 107, 1) 37.5%, rgba(242, 122, 107, 1) 50%, rgba(223, 157, 185, 1) 50%, rgba(223, 157, 185, 1) 62.5%, rgba(192, 156, 221, 1) 62.5%, rgba(192, 156, 221, 1) 75%, rgba(95, 156, 217, 1) 75%, rgba(95, 156, 217, 1) 87.5%, rgba(94, 190, 227, 1) 87.5%, rgba(94, 190, 227, 1) 87.5%, rgba(94, 190, 227, 1) 100%);
+      /* W3C */
+    }
+  }
+}
+@media only screen and (max-width:769px) {
+  .footer {
+    display:inline-block;
+    height:12rem;
+    line-height:1.5rem;
+    padding: 1.5rem 0rem;
+    .span-1 {
+      text-align: center;
+    }
+    .span-2 {
+      margin-bottom:2rem;
+    }
+    .span-3 {
+      text-align: center;
+      margin-bottom:2rem;
+    }
+  }
+}
+//--Footer End--/
+@media only screen and (max-width: 798px) {
+  // Hamburger nav visible on mobile only
+  .hide-slide {
+    display:none;
+  }
+  .nav-mobile {
+    display: block;
+  }
+  nav {
+   width: 100%;
+    padding: $nav-height 0 15px;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+  .main {
+    .aiaa {
+      .content {
+        .img-wrapper {
+          display:inline-block;
+          text-align: center;
+          img {
+            width:300px;
+            height:auto;
+          }
+          img::after {
+            content:"<br/>";
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 798px) {
+  // Hamburger nav visible on mobile only
+  .nav-mobile {
+    display: block;
+  }
+  nav {
+   width: 100%;
+    padding: $nav-height 0 15px;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 3px;
+    width: 25px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: transparent;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 10px;
+}
+

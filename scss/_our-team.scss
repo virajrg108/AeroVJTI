@@ -1,0 +1,64 @@
+.team{
+  color:#222;
+  .title {
+    padding: 10rem 0.5rem 0.5rem 0.5rem;
+    font-size:4rem;
+    color:#565656;
+    text-align:center;
+    font-family:'Ubuntu';
+    hr.colored {
+      border: 0;
+      height: 3.5px;
+      margin-top: 0.5rem;
+      width: 200px;
+      background: linear-gradient(to right, #006400 0%, #006400 12.5%, #c4de8a 12.5%, #c4de8a 25%, #ffd084 25%, #ffd084 37.5%, #f27a6b 37.5%, #f27a6b 50%, #df9db9 50%, #df9db9 62.5%, #c09cdd 62.5%, #c09cdd 75%, #5f9cd9 75%, #5f9cd9 87.5%, #5ebee3 87.5%, #5ebee3 87.5%, #5ebee3 100%);
+    }
+    .subtitle {
+      font-size:1.6rem;
+      text-align: center;
+      font-weight: bold;
+      color:#333;
+    }
+  }
+  .member {
+    padding:0.5rem 8rem;
+    .member-card {
+      text-align:center;
+      margin:3rem 0.5rem;
+      margin:auto;
+      img {
+        border-radius:50%;
+        height:200px;
+        width:200px;
+      }
+      .name {
+        padding:2.2rem 0.5rem 0rem 0.5rem;
+        font-weight:bold;
+        font-size:1.8rem;
+      }
+      .member-info {
+        padding:0.5rem 0.5rem;
+        text-align:left;
+        
+      }
+    }
+    .last-card {
+      width:33.333%;
+    }
+  }
+}
+
+@media only screen and (max-width:769px) {
+  .team {
+    .member {
+      padding:0.5rem 2rem;
+      .member-card {
+        margin:2rem 0.5rem;
+      }
+      .last-card {
+        width:100%;
+        margin:auto;
+      }
+    }
+  }
+}

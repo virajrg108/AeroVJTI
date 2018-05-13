@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Aero VJTI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css'>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <section style="z-index:10  " class="navigation">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="#!"><img src="img/logo-black.png" /></a>
+      </div>
+      <nav>
+        <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+        <ul class="nav-list">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#aiaa">AIAA D/B/F 2017</a>
+          </li>
+          <li>
+            <a href="team.html">Our Team</a>
+          </li>
+          <li>
+            <a href="#!">Sponsorship</a>
+          </li>
+          <li>
+            <a href="#!">Contact Us</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div class="contact-us">
+    <div class="col-lg-10 col-md-10 col-sm-12 parent" style="margin:auto">
+      <p class="title">Contact Us</p>
+      <hr/>
+      <div class="row" style="display:flex">
+        <div class="col-lg-6 col-md-6 col-sm-12 card-form">
+          <div class="card-title">Leave a message</div>
+          <div class="card-body">
+            <form>
+              <input id="name" placeholder="Name" />
+              <input id="email" placeholder="Email-ID" />
+              <input id="subject" placeholder="Subject" />
+              <textarea id="msg" rows="3" placeholder="Type your message here..."></textarea>
+              <button>SUBMIT</button>
+            </form>
+          </div>
+        </div>
+        <div class="headerDivider2"></div>
+        <div class="col-lg-6 col-md-6 col-sm-12 card-location">
+          <div class="card-body">
+            <table>
+              <tr>
+                <td>
+                  <i class="fa fa-map-marker fa-lg"></i>
+                </td>
+                <td>
+                  <b>Find us at the office</b>
+                  <br/> Veermata Jijabai Technological Institute,
+                  <br/> H.R. Mahajani Marg,
+                  <br/> Mumbai-400019
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-phone fa-lg"></i>
+                </td>
+                <td>
+                  <b>Give us a ring</b>
+                  <br/> Tom Smith,
+                  <br/> +91 8080672612
+                  <br/> 9am - 5pm
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <i class="fa fa-globe fa-lg"></i>
+                </td>
+                <td>
+                  <b>Connect with us</b>
+                  <br/>
+                </td>
+              </tr>
+            </table>
+            <div class="icons-div">
+              <div class="icons">
+                <i class="fa fa-instagram fa-2x"></i>
+              </div>
+              <div class="icons">
+                <i class="fa fa-envelope fa-2x"></i>
+              </div>
+              <div class="icons">
+                <i class="fa fa-facebook fa-2x"></i>
+              </div>
+              <div class="icons">
+                <i class="fa fa-twitter fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+    (function($) { // Begin jQuery
+    $(function() { // DOM ready
+      // If a link has a dropdown, add sub menu toggle.
+      $('nav ul li a:not(:only-child)').click(function(e) {
+        $(this).siblings('.nav-dropdown').toggle();
+        // Close one dropdown when selecting another
+        $('.nav-dropdown').not($(this).siblings()).hide();
+        e.stopPropagation();
+      });
+      // Clicking away from dropdown will remove the dropdown class
+      $('html').click(function() {
+        $('.nav-dropdown').hide();
+      });
+      // Toggle open and close nav styles on click
+      $('#nav-toggle').click(function() {
+        $('nav ul').slideToggle();
+      });
+      // Hamburger to X toggle
+      $('#nav-toggle').on('click', function() {
+        this.classList.toggle('active');
+      });
+    }); // end DOM ready
+    })(jQuery); // end jQuery
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    
+  </script>
+</html>

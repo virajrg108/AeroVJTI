@@ -1,0 +1,167 @@
+@import  './main';
+@import './our-team';
+@import './contact';
+body{
+  margin:0;
+  color:#fff;
+  font-family: 'Ubuntu', sans-serif;
+  height:100%;
+  min-height:100%; 
+  padding:0;
+  width:100%;
+  .main-div{
+    background-color:#181818;
+    background-image:url("../img/gradient_bg.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    .header {
+      padding:3.5rem 2rem 2rem 2rem;
+      display: flex;
+      .title {
+        float:left;
+        font-family: 'IBM Plex Mono', monospace;
+        color:#929292;
+        font-weight:bolder;
+        font-size:3rem;
+        margin-left:2rem;
+        letter-spacing: 0.25rem;
+        p{
+          margin:0 0 1rem 0;
+        }
+      }
+      .title-responsive {
+        display:none;
+      }
+      .logo {
+        margin:0 auto;
+        text-align:center;
+        img {
+          width:400px;
+        }
+      }
+      .icons-div {
+        float:right;
+        margin-right:2rem;
+        display:block;
+        .icons {
+          border-radius:50%;
+          width: 4.8rem;
+          background-color: #343434;
+          color:#BEBEBE;
+          padding:0.8rem;
+          margin-bottom:0.5rem;
+          margin-left:auto;
+          transition: 350ms ease-in-out;
+          text-align: center;
+          i {
+            font-size:3rem;
+            background-color: #343434;
+            margin:auto;
+          }
+          .fa-facebook-f {
+            transform: translate(0%,5%);
+          }
+          .fa-instagram {
+            transform: translate(0%,5%);
+          }
+          .fa-twitter {
+            transform: translate(5%,8%);
+          }
+        }
+        .icons:hover {
+          transform:scale(1.1);
+        }
+      }
+    }
+    .page-body {
+      .card-div {
+        margin:auto;
+        .card {
+          margin:auto;
+          text-align: center;
+          position:relative;
+          margin-bottom:2rem;
+          img {
+            width:700px;
+          }
+          .text-block {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight:bold;
+          }
+        }
+      }
+    }
+  }
+  .col-6 {
+    width:50%;
+  }
+  mark { 
+    background-color: #0c0c0c;
+    color: #929292;
+  }
+}
+@media only screen and(max-width:992px) {
+  body{
+    .header {
+      .logo {
+        margin:0 auto;
+        text-align:center;
+        img {
+          width:300px;
+        }
+      }
+    }
+  }
+}
+@media only screen and(max-width:768px) {
+  body{
+    .header {
+      display:block;
+      position:relative;
+      .title {
+        display:none;
+      }
+      .title-responsive {
+        margin:0.2rem;
+        display:inline;
+        color:#BEBEBE;
+        font-family: 'Shrikhand', cursive;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+      .logo {
+        margin:0 auto;
+        text-align:center;
+        img {
+          width:300px!important;
+        }
+      }
+      .icons-div {
+        z-index:1;
+        bottom:0.1rem;
+        display:inline;
+        position:fixed;
+        right:0.1rem;
+        margin-right: 0.1rem;
+        transform: translate(0%, 0%);
+      }
+    }
+    .page-body {
+      .card-div {
+        .card {
+          img {
+            width:330px!important;
+          }
+          .text-block {
+            font-size:2rem;
+          }
+        }
+      }
+    }
+  }
+}
